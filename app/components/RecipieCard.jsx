@@ -6,7 +6,7 @@ const RecipieCard = () => {
   const [recipies, setRecipies] = useState([]);
   const fetchData = async () => {
     const user_recipies = await fetch(
-      "http://localhost:3000/api/show-all-recipies"
+      "http://localhost:80/api/show-all-recipies"
     );
     const data = await user_recipies.json();
 
