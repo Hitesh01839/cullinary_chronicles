@@ -30,6 +30,7 @@ const AddRecipieModal = () => {
       `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/add-recipie/`,
       {
         method: "POST",
+        mode: "no-cors",
         headers: {
           "Content-Type": "application/json",
         },
