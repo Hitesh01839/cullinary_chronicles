@@ -8,13 +8,16 @@ const page = ({ params }) => {
   const [recipie, setRecipie] = useState([]);
 
   const fetchRecipie = async () => {
-    const res = await fetch("/api/show-recipie", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ finalSlug }),
-    });
+    const res = await fetch(
+      "https://${process.env.VERCEL_URL}/api/show-recipie/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ finalSlug }),
+      }
+    );
 
     const data = await res.json();
     setRecipie(data);

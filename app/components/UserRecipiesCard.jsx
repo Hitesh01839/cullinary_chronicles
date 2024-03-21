@@ -6,7 +6,9 @@ import { useRouter } from "next/navigation";
 const UserRecipiesCard = () => {
   const [recipies, setRecipies] = useState([]);
   const fetchData = async () => {
-    const user_recipies = await fetch("/api/show-user-recipie");
+    const user_recipies = await fetch(
+      "https://${process.env.VERCEL_URL}/api/show-user-recipie/"
+    );
     const data = await user_recipies.json();
 
     setRecipies(data);
