@@ -8,7 +8,9 @@ const RecipieCard = () => {
     const user_recipies = await fetch(
       `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/show-all-recipies/`,
       {
-        mode: "cors",
+        withCredentials: true,
+        crossorigin: true,
+        mode: "no-cors",
       }
     );
     const data = await user_recipies.json();

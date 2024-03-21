@@ -12,7 +12,9 @@ const page = ({ params }) => {
       `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/show-recipie/`,
       {
         method: "POST",
-        mode: "cors",
+        withCredentials: true,
+        crossorigin: true,
+        mode: "no-cors",
         headers: {
           "Content-Type": "application/json",
         },
