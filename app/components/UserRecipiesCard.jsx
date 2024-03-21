@@ -9,7 +9,7 @@ const UserRecipiesCard = () => {
     const user_recipies = await fetch(
       `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/show-user-recipie/`,
       {
-        mode: "no-cors",
+        mode: "cors",
       }
     );
     const data = await user_recipies.json();
