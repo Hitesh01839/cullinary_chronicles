@@ -5,9 +5,7 @@ import React, { useEffect, useState } from "react";
 const RecipieCard = () => {
   const [recipies, setRecipies] = useState([]);
   const fetchData = async () => {
-    const user_recipies = await fetch(
-      "http://localhost:3000/api/show-all-recipies"
-    );
+    const user_recipies = await fetch("/api/show-all-recipies");
     const data = await user_recipies.json();
 
     setRecipies(data);
