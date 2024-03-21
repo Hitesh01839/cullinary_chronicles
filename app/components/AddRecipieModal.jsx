@@ -27,7 +27,7 @@ const AddRecipieModal = () => {
     // notify();
 
     const res = await fetch(
-      "https://${process.env.VERCEL_URL}/api/add-recipie/",
+      `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/add-recipie/`,
       {
         method: "POST",
         headers: {
