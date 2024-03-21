@@ -6,12 +6,7 @@ const RecipieCard = () => {
   const [recipies, setRecipies] = useState([]);
   const fetchData = async () => {
     const user_recipies = await fetch(
-      `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/show-all-recipies/`,
-      {
-        withCredentials: true,
-        crossorigin: true,
-        mode: "no-cors",
-      }
+      `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/show-all-recipies/`
     );
     const data = await user_recipies.json();
 

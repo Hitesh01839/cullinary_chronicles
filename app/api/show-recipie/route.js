@@ -1,6 +1,13 @@
 import createClient from "@/app/utils/supabaseServerClient";
+import NextCors from "nextjs-cors";
 
-export async function POST(req) {
+export async function POST(req, res) {
+  await NextCors(req, res, {
+    // Options
+    methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+    origin: "*",
+    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  });
   const supabase = createClient();
 
   const {
