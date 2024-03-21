@@ -26,16 +26,13 @@ const AddRecipieModal = () => {
     setDesc("");
     // notify();
 
-    const res = await fetch(
-      "https://${process.env.VERCEL_URL}/api/add-recipie/",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ title, desc }),
-      }
-    );
+    const res = await fetch("/api/add-recipie/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ title, desc }),
+    });
   };
 
   const [title, setTitle] = useState("");
