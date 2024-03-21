@@ -24,6 +24,14 @@ export async function POST(req) {
 
   const user_data = await req.json();
 
+  const {
+    data: { user },
+  } = supabase.auth.getUser();
+
+  if (!user) {
+    return new Response(JSON.stringify({ message: "User not found" }));
+  }
+
   const { data, error } = await supabase
     .from("recipies")
     .insert([{ title: user_data.title, description: user_data.desc }])
@@ -35,6 +43,6 @@ export async function POST(req) {
 
   return new Response(JSON.stringify({ message: "Inserted the data" }), {
     status: 200,
-    headers: { "Content-Type": "application/json" },    
+    headers: { "Content-Type": "application/json" },
   });
 }

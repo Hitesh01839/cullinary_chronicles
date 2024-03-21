@@ -5,7 +5,11 @@ export async function GET(req) {
 
   const {
     data: { user },
-  } = await supabase.auth.getUser();
+  } = supabase.auth.getUser();
+
+  if (!user) {
+    return new Response(JSON.stringify({ message: "User not found" }));
+  }
 
   const { data, error } = await supabase
     .from("recipies")
