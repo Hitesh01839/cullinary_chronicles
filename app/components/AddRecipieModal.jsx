@@ -26,7 +26,7 @@ const AddRecipieModal = () => {
     setDesc("");
     // notify();
 
-    const res = await fetch("http://localhost:80/api/add-recipie/", {
+    const res = await fetch("http://localhost:3000/api/add-recipie/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

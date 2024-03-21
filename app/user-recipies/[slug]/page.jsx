@@ -8,7 +8,7 @@ const page = ({ params }) => {
   const [recipie, setRecipie] = useState([]);
 
   const fetchRecipie = async () => {
-    const res = await fetch("http://localhost:80/api/show-recipie/", {
+    const res = await fetch("http://localhost:3000/api/show-recipie/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
